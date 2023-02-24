@@ -1,0 +1,23 @@
+{
+  "name": "template-typescript",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "npm run typescript && node build/main.js",
+    "typescript": "npm run lint && npm run format && tsc",
+    "lint": "eslint \"src/**/*.{cjs,js,jsx,ts,tsx}\" --quiet --fix",
+    "format": "prettier --write \"src/**/*.{cjs,js,jsx,ts,tsx,json}\" \"src/**/*.{cjs,js,jsx,ts,tsx,json,html,css}\"",
+    "update-dependencies": "ncu -u"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.1",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-react": "^7.32.2",
+    "npm-check-updates": "^16.7.9",
+    "prettier": "^2.8.4",
+    "typescript": "^4.9.5"
+  }
+}

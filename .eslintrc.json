@@ -1,0 +1,34 @@
+{
+   "parser": "@typescript-eslint/parser",
+  "env": {
+      "node": true,
+      "commonjs": true,
+      // Implicitly enables {parserOptions:{ecmaVersion: 6}}
+      "es2022": true
+   },
+   "parserOptions": {
+      "ecmaFeatures": {
+         // Enables global strict mode:
+         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
+         "impliedStrict": true
+      },
+      // For using imports
+      "sourceType": "module"
+   },
+   "extends": [
+      // Uses the recommended rules for TypeScript
+      "plugin:@typescript-eslint/recommended",
+
+      // Turn off styling rules handled by Prettier
+      // MUST BE LISTED LAST in order to override successfully
+      "prettier"
+   ],
+   "overrides": [
+      {
+         "files": ["*.spec.ts*", "*.test.ts*"],
+         "rules": {
+            "@typescript-eslint/no-empty-function": "off"
+         }
+      }
+   ]
+}
